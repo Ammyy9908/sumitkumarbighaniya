@@ -8,12 +8,13 @@
 }
 
 body{
-    background: #ffffff;
+    background: #12122c;
+    color: #fff;
 }
 
 a{
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 ul{
@@ -45,7 +46,7 @@ nav ul{
 
 nav ul li a{
     font-family: DM sans;
-    color: #181717;
+    /* color: #181717; */
     font-weight: 500;
 }
 
@@ -102,7 +103,7 @@ nav ul li a{
 
 .move-down-btn{
     margin-top: 95px;
-   
+    
     animation: moveDown 1s ease-in-out infinite;
     display: none;
 }
@@ -117,7 +118,7 @@ nav ul li a{
 }
 
 .user-summary p{
-    color: #606060;
+    color: #cacaca;
     font-size: 22px;
     position: relative;
     margin-top: 15px;
@@ -225,6 +226,7 @@ footer{
     justify-content: center;
     width: 85%;
     margin: 25px auto;
+    color: #fff;
     
 }
 .footer-wrapper{
