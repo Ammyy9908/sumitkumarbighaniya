@@ -1,6 +1,6 @@
 const dev_project_container = document.querySelector('.developer-projects');
 const user_background = document.querySelector('.user-image-background');
-const emojis = ["one","two","three","four","five","six","seven"]
+const emojis = ["one","two","three","four","five","six","seven","eight","nine","ten"]
 const memoji_container = document.querySelector('.memoji');
 const colors = ["rgb(255, 161, 161)","rgba(78, 250, 116, 0.493)","rgba(96, 47, 255, 0.493)"];
 
@@ -103,7 +103,11 @@ projects.forEach((project)=>{
 
 
 const changeColor = ()=>{
-    user_background.style.backgroundColor = colors[Math.floor(Math.random()*(0,colors.length))]
+    const random = Math.floor(Math.random()*(0,colors.length));
+    const color = colors[random];
+    user_background.style.backgroundColor = color;
+    
+
 }
 
 const changeEmoji = ()=>{
@@ -115,13 +119,12 @@ window.onload = ()=>{
     changeColor();
 };
 
-const memojis = document.querySelectorAll('.memoji');
-memojis.forEach((memoji)=>{
-    memoji.addEventListener('click',()=>{
-        changeEmoji();
-        changeColor();
-    })
-})
+
+
+setInterval(()=>{
+    changeEmoji();
+    changeColor();
+},3000)
 
 
 

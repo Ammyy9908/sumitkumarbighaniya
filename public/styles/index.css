@@ -80,7 +80,7 @@ nav ul li a{
     width: 65px;
     height: 65px;
     animation: scaleUp .5s 1;
-    transform: translateZ(40px);
+    transform: translateZ(70px);
 }
 
 @keyframes scaleUp{
@@ -99,7 +99,27 @@ nav ul li a{
 }
 .headline-left h3{
     font-size: 30px;
+    
+
 }
+.waving-hand{
+    animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+    15% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+    30% { transform: rotate(-8.0deg) }
+    40% { transform: rotate(14.0deg) }
+    50% { transform: rotate(-4.0deg) }
+    60% { transform: rotate(10.0deg) }
+    70% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+   100% { transform: rotate( 0.0deg) }
+  }
 
 .move-down-btn{
     margin-top: 95px;
@@ -113,17 +133,41 @@ nav ul li a{
         transform: translateY(-100px);
     }
     100%{
-        transform: translateY(50px);
+        transform: translateY(15px);
     }
 }
 
 .user-summary p{
     color: #cacaca;
-    font-size: 22px;
+    font-size: 14px;
     position: relative;
     margin-top: 15px;
+    background-color: rgb(38, 0, 255);
+    padding: 12px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
 
+.fire__icon{
+    position: absolute;
+    top: -100px;
+    left: -35px;
+    display: none;
+}
+.user-summary p:hover .fire__icon{
+    transform: translateY(-25px);
+}
+.quote_bottom{
+    position: absolute;
+    right: -15px;
+    bottom: -40px;
+    
+}
+
+.user-summary p:hover .quote_bottom{
+    transform: translateX(55px) translateY(-12px);
+}
 .hand{
     width: 90px;
     height: 90px;
@@ -160,12 +204,13 @@ nav ul li a{
 .project-thumb{
    
     height: 343px;
-    width: 343px;
+    width: auto;
     display: none;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
-    background-color:#eee;
+    
 }
 
 .loader{
@@ -235,6 +280,10 @@ footer{
     justify-content: space-between;
     width: 100%;
 }
+.footer-wrapper h3{
+    color: rgb(4, 0, 255);
+    
+}
 
 .social-links{
     display: block;
@@ -284,13 +333,18 @@ footer{
         width: 85px;
         height: 85px;
     }
+
+    .user-summary p{
+        font-size: 18px;
+       
+    }
 }
 @media screen and (min-width:978px){
     
     
     .user-summary p{
-        width: 680px;
-        font-size: 32px;
+        width: 380px;
+        font-size: 22px;
     }
 
     .author_image{
@@ -298,7 +352,7 @@ footer{
     }
     
     .headline-left h3{
-        font-size: 60px;
+        font-size: 115px;
     }
 
     .portfolio-container{
@@ -329,5 +383,8 @@ footer{
     .portfolio-container{
        
         margin: 115px auto;
+    }
+    .quote_bottom,.fire__icon{
+        display: block;
     }
 }
