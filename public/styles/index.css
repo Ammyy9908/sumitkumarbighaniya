@@ -33,10 +33,14 @@ ul{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+   
 }
 
 nav{
     display: none;
+    
+  
 }
 nav ul{
     display: flex;
@@ -50,9 +54,10 @@ nav ul li a{
     font-weight: 500;
 }
 
-.portfolio-container{
+.portfolio-container,.about-content{
     width: 85%;
     margin: 45px auto;
+   
 }
 .author_image{
     display: flex;
@@ -63,6 +68,66 @@ nav ul li a{
     
 
 
+}
+
+.planet-3d{
+    position: fixed;
+    z-index: 999;
+    left: 60%;
+    top: 110px;
+    transform: rotate(9.72deg);
+    animation: MOVE 3.5s infinite;
+    transition-delay: 3.5s;
+}
+
+.ring{
+    position: fixed;
+    z-index: 999;
+    left: 10%;
+    top: 410px;
+    transform: rotate(9.72deg);
+    animation: MOVE 3.5s infinite;
+    transition-delay: 3.5s;
+}
+.sphere{
+    position: fixed;
+    z-index: 999;
+    left: 10%;
+    top: 480px;
+    transform: rotate(9.72deg);
+    animation: MOVE 3.5s infinite;
+    transition-delay: 3.5s;
+    
+}
+
+.ring:hover img{
+    transform: rotate(19deg);
+}
+
+
+@keyframes MOVE{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.planet-3d img{
+    width: 228px;
+    height: auto;
+}
+.ring img{
+    width: 98px;
+    height: auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+.sphere img{
+    width: 45px;
 }
 
 .user-image-background{
@@ -96,10 +161,11 @@ nav ul li a{
     width: 100%;
     align-items: flex-start;
     justify-content: space-between;
+    transform-style: preserve-3d;
+    
 }
 .headline-left h3{
     font-size: 30px;
-    
 
 }
 .waving-hand{
@@ -136,8 +202,13 @@ nav ul li a{
         transform: translateY(15px);
     }
 }
+.user-summary {
+    
+    transform: perspective(300px) rotateX(6.74deg) rotateY(6.72deg) scale3d(1,1,1);
+    
+}
 
-.user-summary p{
+.user-summary p,.about-text p{
     color: #cacaca;
     font-size: 14px;
     position: relative;
@@ -149,25 +220,55 @@ nav ul li a{
     cursor: pointer;
 }
 
-.fire__icon{
+
+.fire_icon_box{
+  
     position: absolute;
     top: -100px;
     left: -35px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
     display: none;
+    transform: translateZ(40px);
 }
-.user-summary p:hover .fire__icon{
+.fire_icon_box::after{
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    bottom: -10px;
+    left: 50%;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    
+    box-shadow: 0px 152px 67px rgba(0, 0, 0, 0.21), 0px 70.2742px 49.4996px rgba(0, 0, 0, 0.155752), 0px 40.2093px 30.5013px rgba(0, 0, 0, 0.131624), 0px 24.4068px 16.8386px rgba(0, 0, 0, 0.113389), 0px 14.7061px 9.08694px rgba(0, 0, 0, 0.0966109), 0px 8.18933px 4.54961px rgba(0, 0, 0, 0.078376), 0px 3.52218px 1.75267px rgba(0, 0, 0, 0.0542482);
+}
+.fire_icon_box img{
+    z-index: 999;
+    position: absolute;
+}
+.user-summary p:hover .fire_icon_box{
     transform: translateY(-25px);
 }
-.quote_bottom{
+.rocket__container{
     position: absolute;
     right: -15px;
     bottom: -40px;
+    z-index: 999;
+    transform: translateZ(40px);
     
 }
-
-.user-summary p:hover .quote_bottom{
-    transform: translateX(55px) translateY(-12px);
+.rocket__container img{
+    width: 110px !important;
+    height: auto !important;
 }
+.user-summary p:hover .rocket__container{
+    transform: translateX(55px) translateY(-12px) translateZ(40px);
+}
+
 .hand{
     width: 90px;
     height: 90px;
@@ -182,13 +283,20 @@ nav ul li a{
     font-weight: bold;
 }
 
+
+.ufo{
+    position: absolute;
+    right: -50px;
+    top: -80px;
+}
 .developer-projects{
     width: 100%;
-    margin-top: 110px;
+    margin-top: 70px;
 }
 .project-section{
     display: block;
     gap:35px;
+    margin-top: 45px;
     margin-bottom: 45px;
     border-bottom: 1.5px solid #181717;
     padding-bottom: 35px;
@@ -202,16 +310,17 @@ nav ul li a{
 }
 
 .project-thumb{
-   
+   overflow: hidden;
     height: 343px;
     width: auto;
     display: none;
     position: relative;
-    overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+    
     
 }
+
+
 
 .loader{
     content:"";
@@ -294,6 +403,39 @@ footer{
 }
 
 
+.about-content{
+    display: block;
+    justify-content: space-between;
+    gap:45px;
+}
+.about-text h1{
+    font-size: 28px;
+    line-height: 97.2%;
+    letter-spacing: -0.03em;
+}
+.about-text p{
+    letter-spacing: -0.03em;
+line-height: 117%;
+margin-top: 12px;
+}
+
+.about-content img{
+    width: 70px;
+    margin-top: 15px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.flag{
+    width: 28px !important;
+    height: 28px !important;
+    display: inline-block;
+}
+
+body .netflix video:hover{
+    background-color: red;
+}
+
 @media screen and (min-width:678px){
     .project-section{
         flex-wrap: nowrap;
@@ -334,7 +476,7 @@ footer{
         height: 85px;
     }
 
-    .user-summary p{
+    .user-summary p,.about-text p{
         font-size: 18px;
        
     }
@@ -344,6 +486,10 @@ footer{
     
     .user-summary p{
         width: 380px;
+        font-size: 22px;
+    }
+    .about-text p{
+        width: 545px;
         font-size: 22px;
     }
 
@@ -370,6 +516,34 @@ footer{
         height: 95px;
     }
     
+    .about-content{
+        display: flex;
+    }
+    .about-content img{
+        width: 340px;
+        height: 340px;
+        border-radius: 0%;
+    }
+    .planet-3d{
+        left: 0;
+    }
+    .ring{
+        left: 75%;
+    }
+    .sphere{
+        left: 78%;
+    }
+
+    .planet-3d img{
+        width: 330px;
+        height: auto;
+        transform: rotate(25deg);
+    }
+    .ring img{
+        width: 128px;
+        height: auto;
+        
+    }
     
 }
 
@@ -384,7 +558,10 @@ footer{
        
         margin: 115px auto;
     }
-    .quote_bottom,.fire__icon{
+    .rocket__container,.fire_icon_box{
         display: block;
+    }
+    .about-text h1{
+        font-size: 65px;
     }
 }
