@@ -34,18 +34,31 @@
                <img src="./assets/ring.svg" alt="">
            </div>
 
+       
+
            <div class="sphere">
             <img src="./assets/purple.svg" alt="">
         </div>
+        <canvas class="scene" id="bubble"></canvas>
+        <div class="rellax rellax_left" data-rellax-speed="-2" data-rellax-xs-speed="-5" data-rellax-mobile-speed="3"
+        data-rellax-tablet-speed="-8" style="transform: rotate(45deg);">
+        
+            
+          </div>
+          <div class="rellax rellax_right" data-rellax-speed="-2" data-rellax-xs-speed="-5" data-rellax-mobile-speed="3"
+        data-rellax-tablet-speed="-8" style="transform: rotate(45deg);">
+        </div>
+
+        <div class="rellax rellax_center" data-rellax-speed="2" style="transform: translate3d(0px, -142px, 0px) rotate(45deg);" sm-purple="">
+        </div>
+
         <div class="portfolio-container">
            
             <div class="portfolio-headline">
                 <div class="headline-left">
                     <!-- <span class="waving-hand">👋</span>   -->
-                    <h3> Hello, I’m Sumit Kumar.</h3>
-                    <a href="#bottom" class="move-down-btn">
-                        <img src="./assets/down_arrow.svg" alt="">
-                    </a>
+                    <h3 > Hello, I’m Sumit.</h3>
+                   
                 </div>
                 <div class="user-summary">
                     
@@ -59,6 +72,8 @@
                         </span>
                     </p>
                 </div>
+
+              
             </div>
             <div class="developer-projects">
                 
@@ -93,6 +108,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
     <script src="./js/index.js"></script>
 
     <script>
@@ -101,6 +117,24 @@
         });
        
     </script>
+
+<script>
+    // Also can pass in optional settings block
+    var rellax = new Rellax('.rellax', {
+      speed: -2,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
+  <script src="./js/perlin.js"></script>
+  <script src="./js/script.js"></script>
 
     
 </body>

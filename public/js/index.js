@@ -152,27 +152,27 @@ window.onload = ()=>{
         document.body.style.background = '#e5e4e6';
     })
     netflix_container.addEventListener('mouseleave',()=>{
-        document.body.style.background = '#12122c';
+        document.body.style.background = '#ebebeb';
     })
     spotiy_container.addEventListener('mouseleave',()=>{
-        document.body.style.background = '#12122c';
+        document.body.style.background = '#ebebeb';
     })
 
     chime_container.addEventListener('mouseleave',()=>{
-        document.body.style.background = '#12122c';
+        document.body.style.background = '#ebebeb';
     })
 
     agency_container.addEventListener('mouseleave',()=>{
-        document.body.style.background = '#12122c';
+        document.body.style.background = '#ebebeb';
     })
 
 
     spotify_home.addEventListener('mouseleave',()=>{
-        document.body.style.background = '#12122c';
+        document.body.style.background = '#ebebeb';
     })
 
     zara.addEventListener('mouseleave',()=>{
-        document.body.style.background = '#12122c';
+        document.body.style.background = '#ebebeb';
     })
 };
 
